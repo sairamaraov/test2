@@ -111,11 +111,12 @@ public class StudentGroup implements StudentArrayOperation {
 		{
 		
 		Student[] stu= new Student[students.length];
+			
 		int j=-1,flag=0;// Add your implementation here
 		for(int i=0;i<students.length;i++)
 		{
 			
-			if(students[i].getDateOfBirth() == date)
+			if(students[i].getBirthDate() == date)
 			{
 				++j;
 				stu[j]=students[i];

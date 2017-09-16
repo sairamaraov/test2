@@ -108,7 +108,7 @@ public class StudentGroup implements StudentArrayOperation {
 		
 		int j=-1, flag=0, n = students.length;
 		Student[] stu= new Student[n];
-		/*
+		
 		if(date==null)
 			throw new IllegalArgumentException("invalid arguments");
 		else
@@ -116,13 +116,13 @@ public class StudentGroup implements StudentArrayOperation {
 			
 		for(int i=0; i<n; i++)
 		{
-			
+			/*
 			if(students[i].getBirthDate() <= date)
 			{
 				j++;
 				stu[j]=students[i];
 			}
-			
+			*/
 		}
 		
 		if(j==-1)
@@ -131,8 +131,8 @@ public class StudentGroup implements StudentArrayOperation {
 		}
 		else
 			return stu;
-		} */
-		return null;
+		} 
+		
 	}
 
 	@Override

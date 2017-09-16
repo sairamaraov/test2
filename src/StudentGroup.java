@@ -90,7 +90,22 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public void add(Student student, int index) {
-		// Add your implementation here
+		if(student == null || index<0 || index >= students.length)
+		throw new IllegalArgumentException("invalid arguments");
+		else
+		{
+
+			for(int i = students.length;i>index;i--)
+				{
+
+					students[i] =students[i-1];
+
+				}
+			students[index] = student;
+
+
+
+		}
 	}
 
 	@Override

@@ -125,7 +125,7 @@ public class StudentGroup implements StudentArrayOperation {
 				}
 			students[i+1] = null;
 			b=Arrays.copyOf(students,students.length);
-			students=Arrays.copyOf(b,b.length);
+			students=b;
 		}
 	}
 

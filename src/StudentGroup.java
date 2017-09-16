@@ -160,7 +160,7 @@ public class StudentGroup implements StudentArrayOperation {
 		float max;
 		
 		
-		
+		return null;
 		
 	}
 

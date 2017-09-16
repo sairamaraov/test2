@@ -49,13 +49,13 @@ public class StudentGroup implements StudentArrayOperation {
 		throw new IllegalArgumentException("invalid index");
 		else
 		{
-			this.students[index] = student;
+			students[index] = student;
 		}
 	}
 
 	@Override
 	public void addFirst(Student student) {
-		if (student==null) {
+		/* if (student==null) {
 			throw new IllegalArgumentException("invalid data");
 
 	
@@ -72,12 +72,12 @@ public class StudentGroup implements StudentArrayOperation {
 			students[0] = student;
 			b=Arrays.copyOf(students,students.length);
 			students=b;
-		}
+		} */
 	}
 
 	@Override
 	public void addLast(Student student) {
-		if (student==null) {
+		/*if (student==null) {
 			throw new IllegalArgumentException("invalid data");
 
 	
@@ -86,12 +86,12 @@ public class StudentGroup implements StudentArrayOperation {
 		{
 		students[students.length]=student;
 		}
-
+*/
 	}
 
 	@Override
 	public void add(Student student, int index) {
-		if(student == null || index<0 || index >= students.length)
+	/*	if(student == null || index<0 || index >= students.length)
 		throw new IllegalArgumentException("invalid arguments");
 		else
 		{
@@ -106,13 +106,13 @@ public class StudentGroup implements StudentArrayOperation {
 		
 		b=Arrays.copyOf(students,students.length);
 		students=b;
-		}
+		}*/
 		
 	}
 
 	@Override
 	public void remove(int index) {
-		
+	/*	
 		if( index<0 || index >= this.students.length)
 		throw new IllegalArgumentException("invalid arguments");
 		else
@@ -127,7 +127,7 @@ public class StudentGroup implements StudentArrayOperation {
 			this.students[i+1] = null;
 			b=Arrays.copyOf(this.students,this.students.length);
 			this.students=b;
-		}
+		} */
 	}
 
 	@Override
@@ -162,7 +162,7 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public Student[] getByBirthDate(Date date) {
-		
+	/*	
 		int j=-1, flag=0, n = students.length;
 		Student[] stu= new Student[n];
 		
@@ -184,7 +184,8 @@ public class StudentGroup implements StudentArrayOperation {
 		else
 			return stu;
 		} 
-		
+		*/
+		return null;
 	}
 
 	@Override
@@ -213,8 +214,8 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public Student[] getStudentsWithMaxAvgMark() {
-		int n;
-		float max;
+	//	int n;
+	//	float max;
 		
 		
 		return null;

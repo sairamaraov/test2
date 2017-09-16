@@ -85,6 +85,8 @@ public class StudentGroup implements StudentArrayOperation {
 		else
 		{
 		students[students.length]=student;
+		b=Arrays.copyOf(students,students.length);
+			students=b;
 		}
 
 	}
@@ -145,7 +147,7 @@ public class StudentGroup implements StudentArrayOperation {
 				}
 		}
 		if(index==-1)
-			throw new IllegalArgumentException("student does not exists");
+			throw new IllegalArgumentException("student not exist");
 		else
 			{
 		
@@ -192,13 +194,14 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public Student[] getByBirthDate(Date date) {
+		int j=-1,flag=0;
 	if(date==null)
 			throw new IllegalArgumentException("invalid arguments");
 		else
 		{
 		
 		Student[] stu= new Student[students.length];
-		int j=-1,flag=0;// Add your implementation here
+		// Add your implementation here
 		for(int i=0;i<students.length;i++)
 		{
 			
@@ -222,13 +225,14 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public Student[] getBetweenBirthDates(Date firstDate, Date lastDate) {
+		int j=-1,flag=0;
 		if( firstDate==null || lastDate==null )
 			throw new IllegalArgumentException("invalid arguments");
 		else
 		{
 		
 		Student[] stu= new Student[students.length];
-		int j=-1,flag=0;// Add your implementation here
+		// Add your implementation here
 		for(int i=0;i<students.length;i++)
 		{
 			

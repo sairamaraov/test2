@@ -159,12 +159,7 @@ public class StudentGroup implements StudentArrayOperation {
 		int n;
 		float max;
 		
-		max = students[0].getAvgMark();
-	
-        for(int i = 0; i < n; i++)
-        {
-           
-        }
+		
 		
 		
 	}

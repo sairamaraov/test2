@@ -112,20 +112,21 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public void remove(int index) {
-		if( index<0 || index >= students.length)
+		
+		if( index<0 || index >= this.students.length)
 		throw new IllegalArgumentException("invalid arguments");
 		else
 		{
 
-			for(int i = index; i<students.length-1; i++)
+			for(int i = index; i<this.students.length-1; i++)
 				{
 
-					students[i] =students[i+1];
+					this.students[i] =this.students[i+1];
 
 				}
-			students[i+1] = null;
-			b=Arrays.copyOf(students,students.length);
-			students=b;
+			this.students[i+1] = null;
+			b=Arrays.copyOf(this.students,this.students.length);
+			this.students=b;
 		}
 	}
 

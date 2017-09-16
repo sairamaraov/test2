@@ -1,5 +1,5 @@
 import java.util.Date;
-
+import java.util.Arrays;
 /**
  * A fix-sized array of students
  * array length should always be equal to the number of stored elements
@@ -102,10 +102,11 @@ public class StudentGroup implements StudentArrayOperation {
 
 				}
 			students[index] = student;
-
-
-
 		}
+		
+		students=Arrays.copyOf(students,students.length);
+		
+		
 	}
 
 	@Override

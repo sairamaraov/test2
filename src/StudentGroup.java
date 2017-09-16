@@ -14,7 +14,7 @@ import java.util.Arrays;
 public class StudentGroup implements StudentArrayOperation {
 
 	private Student[] students;
-	
+	private Student[] b;
 	/**
 	 * DO NOT remove or change this constructor, it will be used during task check
 	 * @param length
@@ -102,10 +102,10 @@ public class StudentGroup implements StudentArrayOperation {
 
 				}
 			students[index] = student;
+		
+		b=Arrays.copyOf(students,students.length);
+		students=b;
 		}
-		
-		students=Arrays.copyOf(students,students.length);
-		
 		
 	}
 

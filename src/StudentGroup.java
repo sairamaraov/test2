@@ -116,13 +116,16 @@ public class StudentGroup implements StudentArrayOperation {
 			
 		for(int i=0; i<n; i++)
 		{
-			/*
-			if(students[i].getBirthDate() <= date)
-			{
-				j++;
-				stu[j]=students[i];
-			}
-			*/
+			
+			if (students[i].getBirthDate().before(date) {
+            	j++;
+		stu[j]=students[i];		
+        } else if (students[i].getBirthDate().after(date) {
+           
+        } else {
+            j++;
+		stu[j]=students[i];
+        }        
 		}
 		
 		if(j==-1)

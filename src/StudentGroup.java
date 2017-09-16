@@ -14,7 +14,7 @@ import java.util.Arrays;
 public class StudentGroup implements StudentArrayOperation {
 
 	private Student[] students;
-	private Student[] b;
+	 Student[] b;
 	/**
 	 * DO NOT remove or change this constructor, it will be used during task check
 	 * @param length
@@ -40,16 +40,16 @@ public class StudentGroup implements StudentArrayOperation {
 		throw new IllegalArgumentException("invalid index");
 	else
 
-		return students[index];
+		return this.students[index];
 	}
 
 	@Override
 	public void setStudent(Student student, int index) {
-		if(student == null || index<0 || index >= students.length)
+		if(student == null || index<0 || index >= this.students.length)
 		throw new IllegalArgumentException("invalid index");
 		else
 		{
-			students[index] = student;
+			this.students[index] = student;
 		}
 	}
 
@@ -70,7 +70,8 @@ public class StudentGroup implements StudentArrayOperation {
 
 				}
 			students[0] = student;
-
+			b=Arrays.copyOf(students,students.length);
+			students=b;
 		}
 	}
 

@@ -21,6 +21,7 @@ public class StudentGroup implements StudentArrayOperation {
 	 */
 	public StudentGroup(int length) {
 		this.students = new Student[length];
+		this.b = new Student[students.length];
 	}
 
 	@Override
@@ -45,17 +46,17 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public void setStudent(Student student, int index) {
-	/*	if(student == null || index<0 || index >= this.students.length)
+		if(student == null || index<0 || index >= this.students.length)
 		throw new IllegalArgumentException("invalid index");
 		else
 		{
 			students[index] = student;
-		} */
+		} 
 	}
 
 	@Override
 	public void addFirst(Student student) {
-		/* if (student==null) {
+		 if (student==null) {
 			throw new IllegalArgumentException("invalid data");
 
 	
@@ -72,7 +73,7 @@ public class StudentGroup implements StudentArrayOperation {
 			students[0] = student;
 			b=Arrays.copyOf(students,students.length);
 			students=b;
-		} */
+		} 
 	}
 
 	@Override
@@ -90,7 +91,7 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public void add(Student student, int index) {
-	/*	if(student == null || index<0 || index >= students.length)
+		if(student == null || index<0 || index >= students.length)
 		throw new IllegalArgumentException("invalid arguments");
 		else
 		{
@@ -105,33 +106,55 @@ public class StudentGroup implements StudentArrayOperation {
 		
 		b=Arrays.copyOf(students,students.length);
 		students=b;
-		}*/
+		
 		
 	}
 
 	@Override
 	public void remove(int index) {
-	/*	
-		if( index<0 || index >= this.students.length)
+		
+		if( index<0 || index >= students.length)
 		throw new IllegalArgumentException("invalid arguments");
 		else
 		{
 
-			for(int i = index; i<this.students.length-1; i++)
+			for(int i = index; i<students.length-1; i++)
 				{
-
-					this.students[i] =this.students[i+1];
-
+					students[i] =students[i+1];
 				}
 			this.students[i+1] = null;
-			b=Arrays.copyOf(this.students,this.students.length);
-			this.students=b;
-		} */
+			b=Arrays.copyOf(students,students.length);
+			students=b;
+		} 
 	}
 
 	@Override
 	public void remove(Student student) {
-		// Add your implementation here
+		if(student==null)
+			throw new IllegalArgumentException("invalid parameter");
+		else
+		{
+		
+			int index=-1;
+			for(int i=0;i<students.length-1;i++)
+			{
+			if(students[i]==student)
+				{
+					index = i;
+					break;
+				}
+		}
+		if(index==-1)
+			throw new IllegalArgumentException("student does not exists");
+		else
+			{
+		
+			remove(index);
+			b=Arrays.copyOf(students,students.length);
+			students=b;
+			}
+		
+	}
 	}
 
 	@Override

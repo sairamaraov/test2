@@ -108,7 +108,7 @@ public class StudentGroup implements StudentArrayOperation {
 		
 		int j=-1, flag=0, n = students.length;
 		Student[] stu= new Student[n];
-		
+		/*
 		if(date==null)
 			throw new IllegalArgumentException("invalid arguments");
 		else
@@ -131,7 +131,8 @@ public class StudentGroup implements StudentArrayOperation {
 		}
 		else
 			return stu;
-		}
+		} */
+		return null;
 	}
 
 	@Override

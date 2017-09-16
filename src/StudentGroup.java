@@ -167,6 +167,7 @@ public class StudentGroup implements StudentArrayOperation {
                 max = students[i].getAvgMark();
             }
         }
+		return null;
 	
 		
 	}

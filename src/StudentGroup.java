@@ -179,47 +179,81 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public void bubbleSort() {
-		// Add your implementation here
+		for (int a = 1; a < students.length; a++) {
+        for (int b = 0; b < students.length - a; b++) {
+            if (((students[b].getFullName()).compareTo((students[b + 1].getFullName()))) > 0) {
+                
+                Student temp = students[b];
+                students[b] = students[b + 1];
+                students[b + 1] = temp;
+            }
+        }
 	}
 
 	@Override
 	public Student[] getByBirthDate(Date date) {
-	/*	
-		int j=-1, flag=0, n = students.length;
-		Student[] stu= new Student[n];
-		
-		if(date==null)
+	if(date==null)
 			throw new IllegalArgumentException("invalid arguments");
 		else
 		{
-			
-		for(int i=0; i<n; i++)
+		
+		Student[] stu= new Student[students.length];
+		int j=-1,flag=0;// Add your implementation here
+		for(int i=0;i<students.length;i++)
 		{
 			
+			if(students[i].getDateOfBirth() == date)
+			{
+				++j;
+				stu[j]=students[i];
+			}
 			
 		}
 		
 		if(j==-1)
 		{
-			throw new IllegalArgumentException("not found in the array");
+		throw new IllegalArgumentException("not found in the array");
 		}
 		else
-			return stu;
-		} 
-		*/
-		return null;
+			
+		return stu;
+		}
 	}
 
 	@Override
 	public Student[] getBetweenBirthDates(Date firstDate, Date lastDate) {
-		// Add your implementation here
-		return null;
+		if( firstDate==null || lastDate==null )
+			throw new IllegalArgumentException("invalid arguments");
+		else
+		{
+		
+		Student[] stu= new Student[students.length];
+		int j=-1,flag=0;// Add your implementation here
+		for(int i=0;i<students.length;i++)
+		{
+			
+			if(students[i].getDateOfBirth() >= firstDate &&  students[i].getDateOfBirth() <= lastDate )
+			{
+				++j;
+				stu[j]=students[i];
+			}
+			
+		}
+		
+		if(j==-1)
+		{
+		throw new IllegalArgumentException("not found in the array");
+		}
+		else
+			
+		return stu;
+		}
 	}
 
 	@Override
 	public Student[] getNearBirthDate(Date date, int days) {
-		// Add your implementation here
-		return null;
+		Date newDate= Date(date+days);
+		getBetweenDates(date,newDate);
 	}
 
 	@Override

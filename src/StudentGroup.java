@@ -141,7 +141,24 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public Student getNextStudent(Student student) {
-		// Add your implementation here
-		return null;
+		if(student==null)
+			throw new IllegalArgumentException("invalid parameter");
+		else
+		{
+		
+		int flag=0;
+		for(int i=0;i<students.length-1;i++)
+		{
+			if(students[i]==student)
+			{
+				flag=1;
+				return students[i+1];
+			}
+		}
+		if(flag==0)
+			throw new IllegalArgumentException("do not exists");
+			
+			
+		}
 	}
 }

@@ -105,8 +105,32 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public Student[] getByBirthDate(Date date) {
-		// Add your implementation here
-		return null;
+		if(date==null)
+			throw new IllegalArgumentException("invalid arguments");
+		else
+		{
+		
+		Student[] stu= new Student[students.length];
+		int j=-1,flag=0;// Add your implementation here
+		for(int i=0;i<students.length;i++)
+		{
+			
+			if(students[i].getDateOfBirth() == date)
+			{
+				++j;
+				stu[j]=students[i];
+			}
+			
+		}
+		
+		if(j==-1)
+		{
+		throw new IllegalArgumentException("not found in the array");
+		}
+		else
+			
+		return stu;
+		}
 	}
 
 	@Override

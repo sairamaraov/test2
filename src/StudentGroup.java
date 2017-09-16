@@ -105,20 +105,21 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public Student[] getByBirthDate(Date date) {
+		
+		int j=-1, flag=0, n = students.length;
+		Student[] stu= new Student[n];
+		
 		if(date==null)
 			throw new IllegalArgumentException("invalid arguments");
 		else
 		{
-		
-		Student[] stu= new Student[students.length];
 			
-		int j=-1,flag=0;// Add your implementation here
-		for(int i=0;i<students.length;i++)
+		for(int i=0; i<n; i++)
 		{
 			
-			if(students[i].getBirthDate() >= date)
+			if(students[i].getBirthDate() <= date)
 			{
-				++j;
+				j++;
 				stu[j]=students[i];
 			}
 			
@@ -126,11 +127,10 @@ public class StudentGroup implements StudentArrayOperation {
 		
 		if(j==-1)
 		{
-		throw new IllegalArgumentException("not found in the array");
+			throw new IllegalArgumentException("not found in the array");
 		}
 		else
-			
-		return stu;
+			return stu;
 		}
 	}
 

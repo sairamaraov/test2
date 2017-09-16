@@ -40,17 +40,17 @@ public class StudentGroup implements StudentArrayOperation {
 		throw new IllegalArgumentException("invalid index");
 	else
 
-		return this.students[index];
+		return students[index];
 	}
 
 	@Override
 	public void setStudent(Student student, int index) {
-		if(student == null || index<0 || index >= this.students.length)
+	/*	if(student == null || index<0 || index >= this.students.length)
 		throw new IllegalArgumentException("invalid index");
 		else
 		{
 			students[index] = student;
-		}
+		} */
 	}
 
 	@Override
@@ -77,16 +77,15 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public void addLast(Student student) {
-		/*if (student==null) {
-			throw new IllegalArgumentException("invalid data");
-
-	
-					}
+		if (student==null) 
+		{
+		throw new IllegalArgumentException("invalid data");
+		}
 		else
 		{
 		students[students.length]=student;
 		}
-*/
+
 	}
 
 	@Override
